@@ -1,0 +1,17 @@
+{
+  "name": "smart-student-platform",
+  "version": "1.0.0",
+  "description": "Smart Student Tools Platform with AI Resume Analyzer and Digital Time Capsule",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=5500 --host=0.0.0.0",
+    "dev": "live-server --port=5500 --host=0.0.0.0 --watch=.",
+    "build": "echo 'No build step needed for static files'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["student", "resume", "capsule", "education", "ai"],
+  "author": "",
+  "license": "MIT"
+}

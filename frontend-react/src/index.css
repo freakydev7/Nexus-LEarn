@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6B21FF;
+  --primary-light: #8B5CF6;
+  --primary-dark: #5B1BD7;
+  --bg: #0A0812;
+  --bg-elevated: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: 1px solid rgba(139,92,246,0.15);
+  --text: #E8E3F0;
+  --text-dim: #A09AB8;
+  --text-muted: #6B6580;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Shiny text effect */
+.shiny-text {
+  display: inline-block;
+  background: linear-gradient(
+    120deg,
+    var(--primary) 0%,
+    var(--primary) 35%,
+    #ffffff 50%,
+    var(--primary) 65%,
+    var(--primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiny-text 3s linear infinite;
+}
+
+@keyframes shiny-text {
+  0% { background-position: 150% center; }
+  100% { background-position: -50% center; }
+}
+
+/* Logo glow animation */
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(107,33,255,0.5)); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: var(--glass-border);
+  border-radius: var(--radius);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(107,33,255,0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(139,92,246,0.3);
+  color: var(--text);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-ghost:hover {
+  background: rgba(107,33,255,0.1);
+  border-color: var(--primary-light);
+}
